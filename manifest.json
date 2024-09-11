@@ -1,0 +1,31 @@
+{
+    "manifest_version": 3,
+    "name": "Random Image Replacement",
+    "description": "Every x random picture will be replaced by another one",
+    "version": "1.0",
+    "permissions": ["activeTab", "scripting"],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "icon.png",
+            "32": "icon.png",
+            "48": "icon.png",
+            "128": "icon.png"
+        }
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["content.js"]
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": ["icon.png"],
+            "matches": ["<all_urls>"]
+        }
+    ]
+}
