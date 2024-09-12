@@ -1,20 +1,19 @@
-var pageText = document.body.innerText;
-var $output = document.getElementById("output");
-console.log(pageText);
+const $searchButton = document.getElementById("searchBtn");
+const $searchText = document.getElementById("searchText");
+//$searchButton.addEventListener("click", customSearch($searchText.value));
 
 // Capture Ctrl+F
-//document.addEventListener('keydown', function(event) {
-//    if (event.ctrlKey && event.key === 'f') {
-//        event.preventDefault();
-//        customSearch();
-//    }
-//});
+document.addEventListener('keydown', function(event) {
+    if (event.ctrlKey && event.key === 'f') {
+        event.preventDefault();
+        customSearch($searchText.value);
+    }
+});
 
 // Fonction de recherche améliorée
-function customSearch() {
-    let searchTerm = prompt("Entrez un terme à rechercher :");
-    if (searchTerm) {
-        let regex = new RegExp(searchTerm, 'gi');
+function customSearch(text) {
+    if (text) {
+        let regex = new RegExp(text, 'gi');
         let bodyText = document.body.innerText;
         let matches = bodyText.match(regex);
         
