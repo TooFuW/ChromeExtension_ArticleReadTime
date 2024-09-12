@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Image Replacement Extension</title>
-</head>
+<html>
+    <head>
+        <title>Better Ctrl+F</title>
+        <style>
+            body { width: 200px; padding: 10px; font-family: Arial, sans-serif; }
+            input { width: 100%; margin-bottom: 10px; }
+        </style>
+        <script src="popup.js"></script>
+    </head>
     <body>
-        <h1>Random Image Replacement</h1>
-        <pre id="output"></pre>
+        <input type="text" id="searchText" placeholder="Search..."/>
+        <button id="searchBtn">Rechercher</button>
     </body>
 </html>

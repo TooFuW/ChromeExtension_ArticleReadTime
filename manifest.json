@@ -1,28 +1,25 @@
 {
     "manifest_version": 3,
     "name": "Better Ctrl+F",
-    "description": "Offre une meilleure recherche de la page actuelle avec des outils supplémentaires",
+    "description": "Offer a better search for the current page with additional tools",
     "version": "1.0",
-    "permissions": ["activeTab", "scripting"],
+    "permissions": ["activeTab", "storage"],
     "action": {
         "default_popup": "popup.html",
         "default_icon": {
-            "16": "icon.jpg",
-            "32": "icon.jpg",
-            "48": "icon.jpg",
-            "128": "icon.jpg"
+            "16": "icon.png",
+            "32": "icon.png",
+            "48": "icon.png",
+            "128": "icon.png"
         }
+    },
+    "background": {
+        "service_worker": "background.js"
     },
     "content_scripts": [
         {
             "matches": ["<all_urls>"],
             "js": ["content.js"]
-        }
-    ],
-    "web_accessible_resources": [
-        {
-            "resources": ["icon.png"],
-            "matches": ["<all_urls>"]
         }
     ]
 }
