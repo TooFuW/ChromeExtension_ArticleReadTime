@@ -1,27 +1,33 @@
+// Ajouter l'écouteur d'événement pour le bouton de recherche
 const $searchButton = document.getElementById("searchBtn");
 const $searchText = document.getElementById("searchText");
-//$searchButton.addEventListener("click", customSearch($searchText.value));
+$searchButton.addEventListener("click", () => customSearch($searchText.value));
 
-// Capture Ctrl+F
+// Disable Ctrl+F
 document.addEventListener('keydown', function(event) {
     if (event.ctrlKey && event.key === 'f') {
         event.preventDefault();
-        customSearch($searchText.value);
     }
 });
 
+// Récupérer le texte de la page active
+function getPageText() {
+    chrome.runtime.sendMessage({ action: 'executeScript' }, function(response) {
+        console.log(response);
+    });
+}
+
 // Fonction de recherche améliorée
 function customSearch(text) {
+    getPageText();
     if (text) {
         let regex = new RegExp(text, 'gi');
-        let bodyText = document.body.innerText;
         let matches = bodyText.match(regex);
-        
         if (matches) {
-            alert(`Trouvé ${matches.length} occurrences`);
+            console.log(`Trouvé ${matches.length} occurrences`);
         }
         else {
-            alert("Aucun résultat trouvé");
+            console.log("Aucun résultat trouvé");
         }
     }
 }

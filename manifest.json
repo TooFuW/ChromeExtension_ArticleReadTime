@@ -9,7 +9,7 @@
         "48": "icon.png",
         "128": "icon.png"
     },
-    "permissions": ["activeTab", "scripting"],
+    "permissions": ["activeTab", "storage", "tabs"],
     "action": {
         "default_popup": "popup.html",
         "default_icon": {
