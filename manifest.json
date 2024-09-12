@@ -1,19 +1,16 @@
 {
     "manifest_version": 3,
-    "name": "Random Image Replacement",
-    "description": "Every x random picture will be replaced by another one",
+    "name": "Better Ctrl+F",
+    "description": "Offre une meilleure recherche de la page actuelle avec des outils supplémentaires",
     "version": "1.0",
     "permissions": ["activeTab", "scripting"],
-    "background": {
-        "service_worker": "background.js"
-    },
     "action": {
         "default_popup": "popup.html",
         "default_icon": {
-            "16": "icon.png",
-            "32": "icon.png",
-            "48": "icon.png",
-            "128": "icon.png"
+            "16": "icon.jpg",
+            "32": "icon.jpg",
+            "48": "icon.jpg",
+            "128": "icon.jpg"
         }
     },
     "content_scripts": [
