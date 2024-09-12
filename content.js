@@ -3,12 +3,12 @@ var $output = document.getElementById("output");
 console.log(pageText);
 
 // Capture Ctrl+F
-document.addEventListener('keydown', function(event) {
-    if (event.ctrlKey && event.key === 'f') {
-        event.preventDefault();
-        customSearch();
-    }
-});
+//document.addEventListener('keydown', function(event) {
+//    if (event.ctrlKey && event.key === 'f') {
+//        event.preventDefault();
+//        customSearch();
+//    }
+//});
 
 // Fonction de recherche améliorée
 function customSearch() {
